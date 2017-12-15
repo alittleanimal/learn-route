@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { JokesComponent } from './jokes.component';
 import { jokesRoutes } from './jokes.routes';
 import { SharedModule } from '../shared/shared.module';
+import { JokesGuard } from './jokes-guard';
 
 
 @NgModule ({
@@ -11,7 +12,7 @@ import { SharedModule } from '../shared/shared.module';
         SharedModule,
         RouterModule.forChild(jokesRoutes)
     ],
-    providers: [],
+    providers: [JokesGuard],
     bootstrap: []
 })
 export class JokesModule { }

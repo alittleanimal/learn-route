@@ -9,6 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JokesComponent implements OnInit {
 
+  public jokeContent = '';
+  public saved = false;
+
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute
@@ -23,4 +26,14 @@ export class JokesComponent implements OnInit {
     );
   }
 
+  writeJoke(value) {
+    this.jokeContent = value;
+    this.saved = false;
+  }
+
+  saveContent() {
+    console.log(this.jokeContent);
+    this.jokeContent = '';
+    this.saved = true;
+  }
 }
